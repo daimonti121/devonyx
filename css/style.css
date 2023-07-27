@@ -44,7 +44,7 @@ html, .body {
 [class*="__container"] {
   max-width: 1110px;
   margin: 0 auto; }
-  @media (max-width: 1320px) {
+  @media (max-width: 1440px) {
     [class*="__container"] {
       margin: 0 40px; } }
 
@@ -69,7 +69,7 @@ p {
   background: url("../img/header-back-big.jpg") 100% 70%/cover no-repeat;
   height: 632px;
   width: 100%; }
-  @media (max-width: 1320px) {
+  @media (max-width: 1440px) {
     .header {
       background: url("../img/header-back.png") 100% 0%/cover no-repeat; } }
   .header__links {
