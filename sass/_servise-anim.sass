@@ -1,0 +1,76 @@
+@import 'media'
+@import 'fonts'
+
+.block
+    width: 250px
+    height: 250px
+    margin: 5px
+    border-radius: 15px
+    background: #FFF
+    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.10)
+    display: flex
+    align-items: center
+    justify-content: start
+    flex-direction: column
+    text-align: center
+    position: reletive
+    margin: 12px
+    cursor: pointer
+    p
+        color: #772568
+        text-align: center
+        font-family: Gogh
+        font-size: 20px
+        font-weight: 700
+        line-height: normal
+        margin-top: 18px
+        transition: 0.4s all
+    img 
+        transition: 0.4s all
+
+    .block__hidden
+        opacity: 0
+
+    &:hover .block__hidden
+        opacity: 1
+
+    b
+        color: #772568
+        text-align: center
+        font-family: Gogh
+        font-size: 20px
+        font-style: normal
+        font-weight: 700
+        margin-top: 34px
+        transition: 0.4s all
+    i
+        color: #616161
+        text-align: center
+        font-family: Gogh
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+        width: 227px
+        margin-top: 8px
+        transition: 0.4s all
+        padding: 0 10px
+    b, i
+        display: block
+
+    .block__hidden
+        position: absolute
+        transition: .4s
+        transform: translate(0px, 25px)
+
+    &:hover .block__hidden
+        transform: translate(0px, 0px)
+        transition: .4s all
+
+    &:hover p
+        opacity: 0
+        transition: .4s all
+
+    &:hover img
+        opacity: 0
+        transition: .4s all

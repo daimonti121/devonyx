@@ -1,5 +1,6 @@
 @import 'media'
 @import 'fonts'
+@import 'servise-anim'
 
 *, *::before, *::after
     margin: 0
@@ -38,10 +39,10 @@ body::-webkit-scrollbar
     width: 7px
 
 body::-webkit-scrollbar-track
-    background: #000
+    background: rgba(39, 23, 47, 1)
 
 body::-webkit-scrollbar-thumb
-    background-color: #F9B400 /* цвет бегунка */
+    background-color: #772568 /* цвет бегунка */
     border-radius: 15px /* округлось бегунка */
     border: 2px solid #000 /* отступ вокруг бегунка */
 
@@ -176,3 +177,25 @@ p
                 border-radius: 10px
                 background: #F13B81
                 padding: 15px 10px
+                transition: 0.5s
+                cursor: pointer
+                &:hover
+                    // color: rgba(241, 59, 129, 1)
+                    background: #d03973
+.main
+    background: #EBF0F5
+    .service
+        margin-top: 52px
+        h2
+            color: #772568
+            text-align: center
+            font-family: Gogh
+            font-size: 32px
+            font-weight: 700
+            line-height: normal
+        &__blocks
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-wrap: wrap
+            margin-top: 64px

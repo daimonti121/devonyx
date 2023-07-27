@@ -14,6 +14,89 @@
   font-family: "Gogh";
   src: url("../fonts/Gogh-Regular.woff");
   font-weight: 400; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-ExtraBold.woff");
+  font-weight: 900; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Bold.woff");
+  font-weight: 700; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Medium.woff");
+  font-weight: 500; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Regular.woff");
+  font-weight: 400; }
+.block {
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+  border-radius: 15px;
+  background: #FFF;
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  text-align: center;
+  position: reletive;
+  margin: 12px;
+  cursor: pointer; }
+  .block p {
+    color: #772568;
+    text-align: center;
+    font-family: Gogh;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 18px;
+    transition: 0.4s all; }
+  .block img {
+    transition: 0.4s all; }
+  .block .block__hidden {
+    opacity: 0; }
+  .block:hover .block__hidden {
+    opacity: 1; }
+  .block b {
+    color: #772568;
+    text-align: center;
+    font-family: Gogh;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 34px;
+    transition: 0.4s all; }
+  .block i {
+    color: #616161;
+    text-align: center;
+    font-family: Gogh;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 227px;
+    margin-top: 8px;
+    transition: 0.4s all;
+    padding: 0 10px; }
+  .block b, .block i {
+    display: block; }
+  .block .block__hidden {
+    position: absolute;
+    transition: 0.4s;
+    transform: translate(0px, 25px); }
+  .block:hover .block__hidden {
+    transform: translate(0px, 0px);
+    transition: 0.4s all; }
+  .block:hover p {
+    opacity: 0;
+    transition: 0.4s all; }
+  .block:hover img {
+    opacity: 0;
+    transition: 0.4s all; }
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -52,10 +135,10 @@ body::-webkit-scrollbar {
   width: 7px; }
 
 body::-webkit-scrollbar-track {
-  background: #000; }
+  background: #27172f; }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #F9B400;
+  background-color: #772568;
   border-radius: 15px;
   border: 2px solid #000; }
 
@@ -186,6 +269,28 @@ p {
       line-height: normal;
       border-radius: 10px;
       background: #F13B81;
-      padding: 15px 10px; }
+      padding: 15px 10px;
+      transition: 0.5s;
+      cursor: pointer; }
+      .header__info .info__inner button:hover {
+        background: #d03973; }
+
+.main {
+  background: #EBF0F5; }
+  .main .service {
+    margin-top: 52px; }
+    .main .service h2 {
+      color: #772568;
+      text-align: center;
+      font-family: Gogh;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: normal; }
+    .main .service__blocks {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 64px; }
 
 /*# sourceMappingURL=style.css.map */
