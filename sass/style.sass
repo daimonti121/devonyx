@@ -1,0 +1,177 @@
+@import 'media'
+@import 'fonts'
+
+*, *::before, *::after
+    margin: 0
+    padding: 0
+    border: none
+    box-sizing: border-box
+    -ms-user-select: none
+    -moz-user-select: none
+    -webkit-user-select: none
+    user-select: none
+
+html, .body
+    height: 100%
+    min-width: 320px
+
+.body
+    font-family: "Gogh"
+
+.wrapper
+    min-height: 0%
+    display: flex
+    flex-direction: column
+    overflow: hidden
+
+.main
+    flex: 1 1 auto
+    overflow: hidden
+
+[class*="__container"]
+    max-width: 1110px
+    margin: 0 auto
+    @include _1320
+        margin: 0 40px
+
+body::-webkit-scrollbar
+    width: 7px
+
+body::-webkit-scrollbar-track
+    background: #000
+
+body::-webkit-scrollbar-thumb
+    background-color: #F9B400 /* цвет бегунка */
+    border-radius: 15px /* округлось бегунка */
+    border: 2px solid #000 /* отступ вокруг бегунка */
+
+p
+    font-family: 'Gogh'
+    font-weight: 700
+    color: red
+    font-size: 32px
+
+.header
+    background: url('../img/header-back-big.jpg') 100% 70%/cover no-repeat
+    height: 632px
+    width: 100%
+    @include _1320
+        background: url('../img/header-back.png') 100% 0%/cover no-repeat
+
+    &__links
+        background: rgba(39, 23, 47, 1)
+    &__inner
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 8px 0px
+    &__links-platform
+        display: flex
+    &__link
+        margin-right: 18px
+    &__links-backInfo
+        display: flex
+        align-items: center
+    &__link-backInfo
+        margin-left: 24px
+        a
+            display: flex
+            align-items: center
+            text-decoration: none
+            img
+                margin-right: 12px
+            p
+                font-family: Gogh
+                font-size: 16px
+                font-weight: 500
+                line-height: 21px
+                color: #fff
+                transition: 0.5s
+            &:hover p
+                color: rgba(241, 59, 129, 1)
+
+    &__menu
+        margin-top: 36px
+        .menu__inner
+            display: flex
+            justify-content: space-between
+            align-content: center
+    &__navigator
+        display: flex
+        align-items: center
+        nav
+            ul
+                display: flex
+                align-content: center
+                list-style-type: none
+                li
+                    margin-left: 18px
+                    a
+                        text-decoration: none
+                        font-size: 16px
+                        font-weight: 500
+                        line-height: 21px
+                        letter-spacing: 0em
+                        text-align: left
+                        color: #fff
+                        transition: 0.5s
+                        font-family: 'Gogh'
+                li:hover a
+                    color: rgba(241, 59, 129, 1)
+    &__backinfo
+        display: flex
+        align-items: center
+    &__phone
+        display: flex
+        align-items: center
+        border-radius: 10px
+        border: 2px solid #F13B81
+        padding: 12px 14px
+        margin-right: 16px
+        img
+            margin-right: 8px
+        p
+            font-family: 'Gogh'
+            font-size: 16px
+            font-weight: 500
+            line-height: 21px
+            letter-spacing: 0em
+            text-align: center
+            color: #fff
+            transition: 0.5s
+        &:hover p
+            color: rgba(241, 59, 129, 1)
+    &__lan
+        margin-left: 10px
+    &__info
+        .info__inner
+            max-width: 360px
+            width: 100%
+            margin-top: 148px
+            h2
+                color: #FFF
+                font-family: Gogh
+                font-size: 32px
+                font-style: normal
+                font-weight: 700
+                line-height: normal
+            p
+                color: #FFF
+                font-family: Gogh
+                font-size: 16px
+                font-style: normal
+                font-weight: 500
+                line-height: 130%
+                margin-top: 8px
+            button
+                margin-top: 20px
+                color: #FFF
+                text-align: center
+                font-family: Gogh
+                font-size: 16px
+                font-style: normal
+                font-weight: 500
+                line-height: normal
+                border-radius: 10px
+                background: #F13B81
+                padding: 15px 10px

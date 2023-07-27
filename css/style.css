@@ -1,0 +1,190 @@
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-ExtraBold.woff");
+  font-weight: 900; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Bold.woff");
+  font-weight: 700; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Medium.woff");
+  font-weight: 500; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Regular.woff");
+  font-weight: 400; }
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; }
+
+html, .body {
+  height: 100%;
+  min-width: 320px; }
+
+.body {
+  font-family: "Gogh"; }
+
+.wrapper {
+  min-height: 0%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; }
+
+.main {
+  flex: 1 1 auto;
+  overflow: hidden; }
+
+[class*="__container"] {
+  max-width: 1110px;
+  margin: 0 auto; }
+  @media (max-width: 1320px) {
+    [class*="__container"] {
+      margin: 0 40px; } }
+
+body::-webkit-scrollbar {
+  width: 7px; }
+
+body::-webkit-scrollbar-track {
+  background: #000; }
+
+body::-webkit-scrollbar-thumb {
+  background-color: #F9B400;
+  border-radius: 15px;
+  border: 2px solid #000; }
+
+p {
+  font-family: "Gogh";
+  font-weight: 700;
+  color: red;
+  font-size: 32px; }
+
+.header {
+  background: url("../img/header-back-big.jpg") 100% 70%/cover no-repeat;
+  height: 632px;
+  width: 100%; }
+  @media (max-width: 1320px) {
+    .header {
+      background: url("../img/header-back.png") 100% 0%/cover no-repeat; } }
+  .header__links {
+    background: #27172f; }
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0px; }
+  .header__links-platform {
+    display: flex; }
+  .header__link {
+    margin-right: 18px; }
+  .header__links-backInfo {
+    display: flex;
+    align-items: center; }
+  .header__link-backInfo {
+    margin-left: 24px; }
+    .header__link-backInfo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none; }
+      .header__link-backInfo a img {
+        margin-right: 12px; }
+      .header__link-backInfo a p {
+        font-family: Gogh;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 21px;
+        color: #fff;
+        transition: 0.5s; }
+      .header__link-backInfo a:hover p {
+        color: #f13b81; }
+  .header__menu {
+    margin-top: 36px; }
+    .header__menu .menu__inner {
+      display: flex;
+      justify-content: space-between;
+      align-content: center; }
+  .header__navigator {
+    display: flex;
+    align-items: center; }
+    .header__navigator nav ul {
+      display: flex;
+      align-content: center;
+      list-style-type: none; }
+      .header__navigator nav ul li {
+        margin-left: 18px; }
+        .header__navigator nav ul li a {
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 21px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #fff;
+          transition: 0.5s;
+          font-family: "Gogh"; }
+      .header__navigator nav ul li:hover a {
+        color: #f13b81; }
+  .header__backinfo {
+    display: flex;
+    align-items: center; }
+  .header__phone {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid #F13B81;
+    padding: 12px 14px;
+    margin-right: 16px; }
+    .header__phone img {
+      margin-right: 8px; }
+    .header__phone p {
+      font-family: "Gogh";
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: #fff;
+      transition: 0.5s; }
+    .header__phone:hover p {
+      color: #f13b81; }
+  .header__lan {
+    margin-left: 10px; }
+  .header__info .info__inner {
+    max-width: 360px;
+    width: 100%;
+    margin-top: 148px; }
+    .header__info .info__inner h2 {
+      color: #FFF;
+      font-family: Gogh;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal; }
+    .header__info .info__inner p {
+      color: #FFF;
+      font-family: Gogh;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      margin-top: 8px; }
+    .header__info .info__inner button {
+      margin-top: 20px;
+      color: #FFF;
+      text-align: center;
+      font-family: Gogh;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      border-radius: 10px;
+      background: #F13B81;
+      padding: 15px 10px; }
+
+/*# sourceMappingURL=style.css.map */
