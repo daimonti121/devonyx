@@ -139,7 +139,8 @@ p {
     border-radius: 10px;
     border: 2px solid #F13B81;
     padding: 12px 14px;
-    margin-right: 16px; }
+    margin-right: 16px;
+    text-decoration: none; }
     .header__phone img {
       margin-right: 8px; }
     .header__phone p {
