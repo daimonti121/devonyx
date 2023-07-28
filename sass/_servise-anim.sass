@@ -1,76 +1,86 @@
 @import 'media'
 @import 'fonts'
 
-.block
-    width: 250px
-    height: 250px
-    margin: 5px
-    border-radius: 15px
-    background: #FFF
-    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.10)
-    display: flex
-    align-items: center
-    justify-content: start
-    flex-direction: column
-    text-align: center
-    position: reletive
-    margin: 12px
-    cursor: pointer
-    p
-        color: #772568
-        text-align: center
-        font-family: Gogh
-        font-size: 20px
-        font-weight: 700
-        line-height: normal
-        margin-top: 18px
-        transition: 0.4s all
-    img 
-        transition: 0.4s all
 
-    .block__hidden
-        opacity: 0
+.main
+    .service__blocks 
+        .flip-card 
+            background-color: transparent
+            width: 250px
+            height: 250px
+            perspective: 1000px
+            margin: 12px
+            cursor: pointer
 
-    &:hover .block__hidden
-        opacity: 1
 
-    b
-        color: #772568
-        text-align: center
-        font-family: Gogh
-        font-size: 20px
-        font-style: normal
-        font-weight: 700
-        margin-top: 34px
-        transition: 0.4s all
-    i
-        color: #616161
-        text-align: center
-        font-family: Gogh
-        font-size: 14px
-        font-style: normal
-        font-weight: 400
-        line-height: normal
-        width: 227px
-        margin-top: 8px
-        transition: 0.4s all
-        padding: 0 10px
-    b, i
-        display: block
+        .flip-card-inner 
+            position: relative
+            width: 100%
+            height: 100%
+            text-align: center
+            transition: transform 0.8s
+            transform-style: preserve-3d
 
-    .block__hidden
-        position: absolute
-        transition: .4s
-        transform: translate(0px, 25px)
 
-    &:hover .block__hidden
-        transform: translate(0px, 0px)
-        transition: .4s all
+        .flip-card:hover .flip-card-inner 
+            transform: rotateX(180deg)
 
-    &:hover p
-        opacity: 0
-        transition: .4s all
 
-    &:hover img
-        opacity: 0
-        transition: .4s all
+        .flip-card-front, .flip-card-back 
+            position: absolute
+            width: 100%
+            height: 100%
+            -webkit-backface-visibility: hidden
+            border-radius: 15px
+            background: #FFF 
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.10)
+
+
+        .flip-card-front 
+            border-radius: 15px
+            background: #FFF
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.10)
+
+
+        .flip-card-front h2 
+            color: #772568
+            text-align: center
+            font-family: Gogh
+            font-size: 20px
+            font-style: normal
+            font-weight: 700
+            line-height: normal
+            margin-top: 18px
+
+
+        .flip-card-back 
+            background-color: dodgerblue
+            color: black
+            transform: rotateX(180deg)
+            border-radius: 15px
+            background: #FFF
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.10)
+
+
+        .flip-card-back h2       
+            color: #772568
+            text-align: center
+            font-family: Gogh
+            font-size: 20px
+            font-style: normal
+            font-weight: 700
+            margin-top: 34px
+
+
+        .flip-card-back p    
+            color: #616161
+            text-align: center
+            font-family: Gogh
+            font-size: 14px
+            font-style: normal
+            font-weight: 400
+            line-height: normal
+            width: 227px
+            margin: 0 auto
+            padding: 8px 10px 0px
+            display: block

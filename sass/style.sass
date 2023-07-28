@@ -1,6 +1,7 @@
 @import 'media'
 @import 'fonts'
 @import 'servise-anim'
+@import 'carousel'
 
 *, *::before, *::after
     margin: 0
@@ -35,6 +36,20 @@ html, .body
     @include _1440
         margin: 0 40px
 
+@mixin modalButton
+    background: #F13B81
+    border-radius: 10px
+    cursor: pointer
+    color: #FFF
+    text-align: center
+    font-family: Gogh
+    font-size: 16px
+    font-style: normal
+    font-weight: 500
+    transition: 0.5s
+    &:hover
+        background: #d03973
+
 body::-webkit-scrollbar
     width: 7px
 
@@ -64,7 +79,7 @@ p
         display: flex
         justify-content: space-between
         align-items: center
-        padding: 8px 0px
+        padding: 8px 0px 6px
     &__links-platform
         display: flex
     &__link
@@ -174,14 +189,10 @@ p
                 font-style: normal
                 font-weight: 500
                 line-height: normal
-                border-radius: 10px
-                background: #F13B81
                 padding: 15px 10px
-                transition: 0.5s
-                cursor: pointer
+                @include modalButton
                 &:hover
-                    // color: rgba(241, 59, 129, 1)
-                    background: #d03973
+
 .main
     background: #EBF0F5
     .service
@@ -198,4 +209,44 @@ p
             justify-content: center
             align-items: center
             flex-wrap: wrap
-            margin-top: 64px
+            margin-top: 52px
+
+        button
+            @include modalButton
+            padding: 15px
+            margin: 80px auto 0px
+            display: block
+    .project
+        margin-top: 64px
+        background: url('../img/project-back.png') 100% 0%/cover no-repeat
+        &__info
+            display: flex
+            justify-content: center
+            padding-top: 30px
+            width: 100%
+            h2
+                color: #FFF
+                text-align: center
+                font-family: Gogh
+                font-size: 32px
+                font-style: normal
+                font-weight: 700
+                line-height: normal
+                display: block
+                width: 40%
+            p
+                color: #FFF
+                font-family: Gogh
+                font-size: 16px
+                font-style: normal
+                font-weight: 500
+                line-height: 130%
+                display: block
+                max-width: 440px
+                width: 100%
+                
+        button
+            @include modalButton
+            padding: 15px
+            margin: 0px auto 0px
+            display: block
