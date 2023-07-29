@@ -2,10 +2,12 @@
 @import 'fonts'
     
 /* The Modal (background) */
+
 .modal
     display: none
     position: fixed
     z-index: 1
+    padding-top: 100px
     left: 0
     top: 0
     width: 100%
@@ -15,18 +17,20 @@
     background-color: rgba(0,0,0,0.4)
 
 /* Modal Content/Box */
+
 .modal-content
-    background-color: #EBF0F5
-    // margin: 15% auto
     padding: 60px
     position: relative
-    top: calc(50% - 362px)
-    left: calc(50% - 640px)
+    background-color: #EBF0F5
+    margin: auto
     border: 1px solid #888
     max-width: 1280px
     width: 80%
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+    -webkit-animation-name: animatetop
+    -webkit-animation-duration: 0.4s
     animation-name: animatetop
-    animation-duration: 0.4s 
+    animation-duration: 0.4s
     h2 
         color: #616161
         font-family: Gogh
@@ -118,12 +122,19 @@
     text-decoration: none
     cursor: pointer
 
+@-webkit-keyframes animatetop 
+    from 
+        top: -300px
+        opacity: 0 
+
+    to 
+        top: 0
+        opacity: 1
+
 @keyframes animatetop 
-    0% 
+    from 
         top: -300px 
         opacity: 0
-    50%
-        top: - 150px
-    100%
+    to
         top: 0px 
         opacity: 1

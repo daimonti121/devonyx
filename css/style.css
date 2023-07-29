@@ -221,6 +221,7 @@
   display: none;
   position: fixed;
   z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%;
@@ -231,14 +232,16 @@
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #EBF0F5;
   padding: 60px;
   position: relative;
-  top: calc(50% - 362px);
-  left: calc(50% - 640px);
+  background-color: #EBF0F5;
+  margin: auto;
   border: 1px solid #888;
   max-width: 1280px;
   width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s; }
   .modal-content h2 {
@@ -332,13 +335,18 @@
   text-decoration: none;
   cursor: pointer; }
 
-@keyframes animatetop {
-  0% {
+@-webkit-keyframes animatetop {
+  from {
     top: -300px;
     opacity: 0; }
-  50% {
-    top: -150px; }
-  100% {
+  to {
+    top: 0;
+    opacity: 1; } }
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0; }
+  to {
     top: 0px;
     opacity: 1; } }
 .styled-checkbox {
@@ -379,6 +387,104 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal; }
+
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-ExtraBold.woff");
+  font-weight: 900; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Bold.woff");
+  font-weight: 700; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Medium.woff");
+  font-weight: 500; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Regular.woff");
+  font-weight: 400; }
+/* The Modal (background) */
+.modal-project {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+/* Modal Content */
+.modal-content-project {
+  position: relative;
+  background-color: #EBF0F5;
+  margin: auto;
+  padding: 40px;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop-project;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop-project;
+  animation-duration: 0.4s; }
+  .modal-content-project h3, .modal-content-project h2 {
+    color: #616161;
+    font-family: Gogh-Bold;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; }
+  .modal-content-project p {
+    color: #616161;
+    font-family: Gogh;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px; }
+
+/* Add Animation */
+@-webkit-keyframes animatetop-project {
+  from;
+  top: -300px;
+  opacity: 0;
+  to;
+  top: 0;
+  opacity: 1; }
+@keyframes animatetop-project {
+  from {
+    top: -300px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
+/* The Close Button */
+.close-project {
+  color: #5f6061;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.close-project:hover,
+.close-project:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer; }
+
+.modal-header {
+  padding: 2px 16px;
+  color: #000; }
+
+.modal-body {
+  padding: 2px 16px; }
+
+.modal-footer {
+  padding: 2px 16px;
+  color: #000; }
 
 *, *::before, *::after {
   margin: 0;
