@@ -1,0 +1,129 @@
+@import 'media'
+@import 'fonts'
+    
+/* The Modal (background) */
+.modal
+    display: none
+    position: fixed
+    z-index: 1
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    overflow: auto
+    background-color: rgb(0,0,0)
+    background-color: rgba(0,0,0,0.4)
+
+/* Modal Content/Box */
+.modal-content
+    background-color: #EBF0F5
+    // margin: 15% auto
+    padding: 60px
+    position: relative
+    top: calc(50% - 362px)
+    left: calc(50% - 640px)
+    border: 1px solid #888
+    max-width: 1280px
+    width: 80%
+    animation-name: animatetop
+    animation-duration: 0.4s 
+    h2 
+        color: #616161
+        font-family: Gogh
+        font-size: 32px
+        font-style: normal
+        font-weight: 700
+        line-height: normal
+    p 
+        color: #616161
+        font-family: Gogh
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+        max-width: 514px
+        margin-top: 8px
+    a
+        color: #F13B81
+        font-family: Gogh
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+        text-decoration: none
+        margin-top: 10px
+        display: block
+        width: 160px
+    form 
+        display: flex
+        flex-direction: column
+        margin-top: 6px
+        .btn 
+            margin-top: 24px
+            border-radius: 10px
+            border: 1px solid #2E2E2E
+            max-width: 260px
+            background: #EBF0F5
+            outline: none
+            padding: 16px
+            color: #2E2E2E
+            font-family: Gogh
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: normal  
+        .btn-textarea
+            margin-top: 24px
+            border-radius: 10px
+            border: 1px solid #2E2E2E
+            max-width: 540px
+            max-height: 120px
+            background: #EBF0F5
+            outline: none
+            padding: 16px
+            color: #2E2E2E
+            font-family: Gogh
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: normal  
+            resize: none
+        .submit
+            max-width: 175px
+            background: #F13B81
+            border-radius: 10px
+            cursor: pointer
+            color: #FFF
+            text-align: center
+            font-family: Gogh
+            font-size: 16px
+            font-style: normal
+            font-weight: 500
+            transition: 0.5s
+            padding: 15px
+            margin-top: 30px
+            &:hover
+                background: #d03973
+
+/* The Close Button */
+.close
+    color: #aaa
+    float: right
+    font-size: 28px
+    font-weight: bold
+
+.close:hover,
+.close:focus
+    color: black
+    text-decoration: none
+    cursor: pointer
+
+@keyframes animatetop 
+    0% 
+        top: -300px 
+        opacity: 0
+    50%
+        top: - 150px
+    100%
+        top: 0px 
+        opacity: 1

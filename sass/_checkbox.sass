@@ -1,0 +1,40 @@
+.styled-checkbox
+    position: absolute // take it out of document flow
+    opacity: 0 // hide it
+
+.styled-checkbox + label
+    position: relative
+    cursor: pointer
+    padding: 0
+    margin-top: 22px
+
+.styled-checkbox + label:before
+    content: ''
+    margin-right: 10px
+    display: inline-block
+    vertical-align: text-top
+    width: 18px
+    height: 18px
+    border-radius: 2px
+    border: 1px solid #2E2E2E
+
+
+.styled-checkbox:checked + label:after
+    content: ''
+    position: absolute
+    left: 4px
+    top: 8px
+    background: #2E2E2E
+    width: 2px
+    height: 2px
+    box-shadow: 2px 0 0 #2E2E2E, 4px 0 0 #2E2E2E, 4px -2px 0 #2E2E2E, 4px -4px 0 #2E2E2E, 4px -6px 0 #2E2E2E, 4px -8px 0 #2E2E2E
+    transform: rotate(45deg)
+
+.checkbox-label
+    color: #2E2E2E
+    font-family: Gogh
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+

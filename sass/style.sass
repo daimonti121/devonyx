@@ -2,6 +2,8 @@
 @import 'fonts'
 @import 'servise-anim'
 @import 'carousel'
+@import 'modal-btn'
+@import 'checkbox'
 
 *, *::before, *::after
     margin: 0
@@ -16,6 +18,7 @@
 html, .body
     height: 100%
     min-width: 320px
+    scroll-behavior: smooth
 
 .body
     font-family: "Gogh"
@@ -67,6 +70,7 @@ p
     color: red
     font-size: 32px
 
+// start section: header  
 .header
     background: url('../img/header-back-big.jpg') 100% 70%/cover no-repeat
     width: 100%
@@ -79,11 +83,13 @@ p
         display: flex
         justify-content: space-between
         align-items: center
-        padding: 8px 0px 6px
+        padding: 8px 0px
     &__links-platform
         display: flex
     &__link
         margin-right: 18px
+        a
+            display: flex
     &__links-backInfo
         display: flex
         align-items: center
@@ -130,7 +136,7 @@ p
                         text-align: left
                         color: #fff
                         transition: 0.5s
-                        font-family: 'Gogh'
+                        font-family: Gogh
                 li:hover a
                     color: rgba(241, 59, 129, 1)
     &__backinfo
@@ -147,7 +153,7 @@ p
         img
             margin-right: 8px
         p
-            font-family: 'Gogh'
+            font-family: Gogh
             font-size: 16px
             font-weight: 500
             line-height: 21px
@@ -191,10 +197,12 @@ p
                 line-height: normal
                 padding: 15px 10px
                 @include modalButton
-                &:hover
+    // finish section: header  
 
 .main
     background: #EBF0F5
+
+    // start section: service 
     .service
         margin-top: 52px
         h2
@@ -216,6 +224,9 @@ p
             padding: 15px
             margin: 80px auto 0px
             display: block
+    // finish section: service 
+
+    // start section: project 
     .project
         margin-top: 64px
         background: url('../img/project-back.png') 100% 0%/cover no-repeat
@@ -244,9 +255,200 @@ p
                 display: block
                 max-width: 440px
                 width: 100%
-                
+
         button
             @include modalButton
             padding: 15px
-            margin: 0px auto 0px
-            display: block
+            margin: 0px auto 36px
+            position: relative
+            left: calc( 50% - 85px )
+    // finish section: project 
+
+    // start section: company 
+    .company
+        margin-top: 78px
+        margin-bottom: 84px
+        &__inner
+            display: flex
+            flex-direction: column
+        &__items
+            display: flex
+            align-items: flex-start
+            .photos
+                display: flex
+                flex-wrap: wrap
+                &__top
+                    display: flex
+                    button
+                        margin: 4px
+                        cursor: pointer
+                    .image-1
+                        width: 200px
+                        height: 200px
+                    .image-2
+                        width: 376px
+                        height: 200px
+                &__bottom
+                    display: flex
+                    button
+                        margin: 4px
+                        cursor: pointer
+            .info
+                max-width: 430px
+                width: 100%
+                margin-left: 45px
+                &__title
+                    h4
+                        color: #F13B81
+                        font-family: Gogh
+                        font-size: 16px
+                        font-style: normal
+                        font-weight: 900
+                        line-height: normal
+                    h2
+                        color: #616161
+                        font-family: Gogh
+                        font-size: 32px
+                        font-style: normal
+                        font-weight: 700
+                        line-height: normal
+                        margin-top: 8px
+                    p
+                        color: #616161
+                        font-family: Gogh
+                        font-size: 16px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: normal
+                        margin-top: 8px
+                &__list
+                    margin-top: 17px
+                    .list-item
+                        display: flex
+                        align-items: center
+                        justify-content: flex-start
+                        margin-bottom: 17px
+                        p
+                            max-width: 284px
+                            color: #616161
+                            font-family: Gogh
+                            font-size: 24px
+                            font-style: normal
+                            font-weight: 700
+                            line-height: normal
+                            margin-left: 16px
+                    img
+                        width: 55px
+                        height: 55px
+                    .list-item-last
+                        display: flex
+                        align-items: center
+                        justify-content: flex-start
+                        .text
+                            margin-left: 16px
+                            h6
+                                color: #F13B81
+                                font-family: Gogh
+                                font-size: 16px
+                                font-style: normal
+                                font-weight: 800
+                                line-height: normal
+                            p
+                                max-width: 284px
+                                color: #616161
+                                font-family: Gogh
+                                font-size: 24px
+                                font-style: normal
+                                font-weight: 700
+                                line-height: normal
+                                margin-top: 5px
+        &__back-info
+            max-width: 686px
+            margin: 58px auto 0px
+            text-align: center
+            h2
+                color: #616161
+                font-family: Gogh
+                font-size: 32px
+                font-style: normal
+                font-weight: 700
+                line-height: normal
+            p
+                color: #616161
+                text-align: center
+                font-family: Gogh
+                font-size: 16px
+                font-style: normal
+                font-weight: 400
+                line-height: normal
+                margin-top: 20px
+            button
+                @include modalButton
+                padding: 15px
+                margin-top: 30px
+
+    // finish section: company 
+
+    // start section: footer 
+
+    .footer
+        background: url('../img/footer-back.png') 100% 0%/cover no-repeat
+        &__inner
+            padding-top: 30px
+            display: flex
+            justify-content: space-between
+        &__menu
+            nav
+                ul
+                    list-style-type: none
+                    li
+                        margin-bottom: 12px
+                        a
+                            text-decoration: none
+                            font-family: Gogh
+                            font-size: 20px
+                            font-weight: 500
+                            line-height: 27px
+                            letter-spacing: 0em
+                            text-align: left
+                            color: #fff
+                            transition: .5s
+                    li:hover a
+                        color: rgba(241, 59, 129, 1)
+        &__logo
+            position: relative
+            left: 50px
+        .backInfo
+            &__title
+                h2
+                    font-family: Gogh
+                    font-size: 20px
+                    font-weight: 500
+                    line-height: 27px
+                    letter-spacing: 0em
+                    text-align: left
+                    color: #fff
+            &__list
+                .item
+                    margin-top: 16px
+                    a
+                        display: flex
+                        align-items: center
+                        text-decoration: none
+                        span
+                            color: #FFF
+                            font-family: Gogh
+                            font-size: 16px
+                            font-style: normal
+                            font-weight: 500
+                            line-height: normal
+                            transition: .4s
+                            margin-left: 7px
+                    a:hover span
+                        color: rgba(241, 59, 129, 1)
+            &__links
+                margin-top: 20px
+                a
+                    margin: 0px 7px
+
+    // finish section: footer 

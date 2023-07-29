@@ -200,6 +200,186 @@
     right: 0px;
     top: 0px; }
 
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-ExtraBold.woff");
+  font-weight: 900; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Bold.woff");
+  font-weight: 700; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Medium.woff");
+  font-weight: 500; }
+@font-face {
+  font-family: "Gogh";
+  src: url("../fonts/Gogh-Regular.woff");
+  font-weight: 400; }
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #EBF0F5;
+  padding: 60px;
+  position: relative;
+  top: calc(50% - 362px);
+  left: calc(50% - 640px);
+  border: 1px solid #888;
+  max-width: 1280px;
+  width: 80%;
+  animation-name: animatetop;
+  animation-duration: 0.4s; }
+  .modal-content h2 {
+    color: #616161;
+    font-family: Gogh;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; }
+  .modal-content p {
+    color: #616161;
+    font-family: Gogh;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 514px;
+    margin-top: 8px; }
+  .modal-content a {
+    color: #F13B81;
+    font-family: Gogh;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+    width: 160px; }
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px; }
+    .modal-content form .btn {
+      margin-top: 24px;
+      border-radius: 10px;
+      border: 1px solid #2E2E2E;
+      max-width: 260px;
+      background: #EBF0F5;
+      outline: none;
+      padding: 16px;
+      color: #2E2E2E;
+      font-family: Gogh;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal; }
+    .modal-content form .btn-textarea {
+      margin-top: 24px;
+      border-radius: 10px;
+      border: 1px solid #2E2E2E;
+      max-width: 540px;
+      max-height: 120px;
+      background: #EBF0F5;
+      outline: none;
+      padding: 16px;
+      color: #2E2E2E;
+      font-family: Gogh;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      resize: none; }
+    .modal-content form .submit {
+      max-width: 175px;
+      background: #F13B81;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #FFF;
+      text-align: center;
+      font-family: Gogh;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      transition: 0.5s;
+      padding: 15px;
+      margin-top: 30px; }
+      .modal-content form .submit:hover {
+        background: #d03973; }
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer; }
+
+@keyframes animatetop {
+  0% {
+    top: -300px;
+    opacity: 0; }
+  50% {
+    top: -150px; }
+  100% {
+    top: 0px;
+    opacity: 1; } }
+.styled-checkbox {
+  position: absolute;
+  opacity: 0; }
+
+.styled-checkbox + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 22px; }
+
+.styled-checkbox + label:before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: 1px solid #2E2E2E; }
+
+.styled-checkbox:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  background: #2E2E2E;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 #2E2E2E, 4px 0 0 #2E2E2E, 4px -2px 0 #2E2E2E, 4px -4px 0 #2E2E2E, 4px -6px 0 #2E2E2E, 4px -8px 0 #2E2E2E;
+  transform: rotate(45deg); }
+
+.checkbox-label {
+  color: #2E2E2E;
+  font-family: Gogh;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal; }
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -212,7 +392,8 @@
 
 html, .body {
   height: 100%;
-  min-width: 320px; }
+  min-width: 320px;
+  scroll-behavior: smooth; }
 
 .body {
   font-family: "Gogh"; }
@@ -263,11 +444,13 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 0px 6px; }
+    padding: 8px 0px; }
   .header__links-platform {
     display: flex; }
   .header__link {
     margin-right: 18px; }
+    .header__link a {
+      display: flex; }
   .header__links-backInfo {
     display: flex;
     align-items: center; }
@@ -312,7 +495,7 @@ p {
           text-align: left;
           color: #fff;
           transition: 0.5s;
-          font-family: "Gogh"; }
+          font-family: Gogh; }
       .header__navigator nav ul li:hover a {
         color: #f13b81; }
   .header__backinfo {
@@ -329,7 +512,7 @@ p {
     .header__phone img {
       margin-right: 8px; }
     .header__phone p {
-      font-family: "Gogh";
+      font-family: Gogh;
       font-size: 16px;
       font-weight: 500;
       line-height: 21px;
@@ -457,9 +640,195 @@ p {
       font-weight: 500;
       transition: 0.5s;
       padding: 15px;
-      margin: 0px auto 0px;
-      display: block; }
+      margin: 0px auto 36px;
+      position: relative;
+      left: calc( 50% - 85px ); }
       .main .project button:hover {
         background: #d03973; }
+  .main .company {
+    margin-top: 78px;
+    margin-bottom: 84px; }
+    .main .company__inner {
+      display: flex;
+      flex-direction: column; }
+    .main .company__items {
+      display: flex;
+      align-items: flex-start; }
+      .main .company__items .photos {
+        display: flex;
+        flex-wrap: wrap; }
+        .main .company__items .photos__top {
+          display: flex; }
+          .main .company__items .photos__top button {
+            margin: 4px;
+            cursor: pointer; }
+          .main .company__items .photos__top .image-1 {
+            width: 200px;
+            height: 200px; }
+          .main .company__items .photos__top .image-2 {
+            width: 376px;
+            height: 200px; }
+        .main .company__items .photos__bottom {
+          display: flex; }
+          .main .company__items .photos__bottom button {
+            margin: 4px;
+            cursor: pointer; }
+      .main .company__items .info {
+        max-width: 430px;
+        width: 100%;
+        margin-left: 45px; }
+        .main .company__items .info__title h4 {
+          color: #F13B81;
+          font-family: Gogh;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 900;
+          line-height: normal; }
+        .main .company__items .info__title h2 {
+          color: #616161;
+          font-family: Gogh;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          margin-top: 8px; }
+        .main .company__items .info__title p {
+          color: #616161;
+          font-family: Gogh;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          margin-top: 8px; }
+        .main .company__items .info__list {
+          margin-top: 17px; }
+          .main .company__items .info__list .list-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 17px; }
+            .main .company__items .info__list .list-item p {
+              max-width: 284px;
+              color: #616161;
+              font-family: Gogh;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              margin-left: 16px; }
+          .main .company__items .info__list img {
+            width: 55px;
+            height: 55px; }
+          .main .company__items .info__list .list-item-last {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
+            .main .company__items .info__list .list-item-last .text {
+              margin-left: 16px; }
+              .main .company__items .info__list .list-item-last .text h6 {
+                color: #F13B81;
+                font-family: Gogh;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: normal; }
+              .main .company__items .info__list .list-item-last .text p {
+                max-width: 284px;
+                color: #616161;
+                font-family: Gogh;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin-top: 5px; }
+    .main .company__back-info {
+      max-width: 686px;
+      margin: 58px auto 0px;
+      text-align: center; }
+      .main .company__back-info h2 {
+        color: #616161;
+        font-family: Gogh;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal; }
+      .main .company__back-info p {
+        color: #616161;
+        text-align: center;
+        font-family: Gogh;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 20px; }
+      .main .company__back-info button {
+        background: #F13B81;
+        border-radius: 10px;
+        cursor: pointer;
+        color: #FFF;
+        text-align: center;
+        font-family: Gogh;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        transition: 0.5s;
+        padding: 15px;
+        margin-top: 30px; }
+        .main .company__back-info button:hover {
+          background: #d03973; }
+  .main .footer {
+    background: url("../img/footer-back.png") 100% 0%/cover no-repeat; }
+    .main .footer__inner {
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between; }
+    .main .footer__menu nav ul {
+      list-style-type: none; }
+      .main .footer__menu nav ul li {
+        margin-bottom: 12px; }
+        .main .footer__menu nav ul li a {
+          text-decoration: none;
+          font-family: Gogh;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 27px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #fff;
+          transition: 0.5s; }
+      .main .footer__menu nav ul li:hover a {
+        color: #f13b81; }
+    .main .footer__logo {
+      position: relative;
+      left: 50px; }
+    .main .footer .backInfo__title h2 {
+      font-family: Gogh;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #fff; }
+    .main .footer .backInfo__list .item {
+      margin-top: 16px; }
+      .main .footer .backInfo__list .item a {
+        display: flex;
+        align-items: center;
+        text-decoration: none; }
+        .main .footer .backInfo__list .item a span {
+          color: #FFF;
+          font-family: Gogh;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          transition: 0.4s;
+          margin-left: 7px; }
+      .main .footer .backInfo__list .item a:hover span {
+        color: #f13b81; }
+    .main .footer .backInfo__links {
+      margin-top: 20px; }
+      .main .footer .backInfo__links a {
+        margin: 0px 7px; }
 
 /*# sourceMappingURL=style.css.map */
