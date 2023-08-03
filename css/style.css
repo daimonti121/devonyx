@@ -1123,8 +1123,8 @@ p {
       left: calc( 50% - 88px ); }
       .main .project .button:hover {
         background: #d03973; }
-      .main .project .button .eng {
-        left: calc( 50% - 74px ); }
+    .main .project .eng {
+      left: calc( 50% - 74px ); }
   .main .company {
     margin-top: 78px;
     margin-bottom: 84px; }
