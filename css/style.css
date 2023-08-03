@@ -769,6 +769,8 @@
     align-items: center; }
     .header__inner .menu-mob .mob-lan a:nth-child(2) {
       margin-left: 18px; }
+    .header__inner .menu-mob .mob-lan a img {
+      border-radius: 20px; }
 .header__inner .menu-mob .mob-network {
   display: flex;
   margin-top: 48px; }
@@ -940,7 +942,8 @@ p {
   .header__lan {
     margin-left: 10px; }
     .header__lan .active {
-      border: 2px solid white;
+      border: 2px solid white; }
+    .header__lan img {
       border-radius: 20px; }
   .header__info .info__inner {
     max-width: 360px;
@@ -1117,9 +1120,11 @@ p {
       padding: 15px;
       margin: 0px auto 0px;
       position: relative;
-      left: calc( 50% - 74px ); }
+      left: calc( 50% - 88px ); }
       .main .project .button:hover {
         background: #d03973; }
+      .main .project .button .eng {
+        left: calc( 50% - 74px ); }
   .main .company {
     margin-top: 78px;
     margin-bottom: 84px; }
