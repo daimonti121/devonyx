@@ -1,0 +1,144 @@
+@import 'media'
+@import 'fonts'
+
+
+.header
+    &__inner
+        .header__logo-mob
+            display: none
+            @include _979
+                display: block
+        .menu-btn 
+            display: none
+            @include _979
+                display: block
+        .menu 
+            position: fixed
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+
+            padding: 20px
+            background: #27172F
+            transform: translate(-100%)
+            transition: all .2s
+
+        .menu.active 
+            transform: translate(0%)
+            z-index: 1
+
+            display: flex
+            justify-content: center
+
+            padding-top: 20px
+
+        .menu-btn 
+            width: 24px
+            height: 24px
+            position: relative
+            z-index: 2
+            cursor: pointer
+        
+        .menu-btn.active
+            position: fixed
+            top: 22px
+            right: 20px
+
+        .menu-btn span 
+            width: 24px
+            height: 2px
+            background-color: rgba(255, 255, 255, 1)
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            transition: all .5s
+        
+        .menu-btn span:nth-child(1) 
+            width: 15px
+            left: 16px
+
+        .menu-btn span:nth-child(2) 
+            top: calc(50% - 8px)
+        
+        .menu-btn span:nth-child(3) 
+            top: calc(50% + 8px)
+
+        .menu-btn.active span:first-child 
+            opacity: 0
+            
+
+        .menu-btn.active span:nth-child(2) 
+            transform: translate(-50%, -50%) rotate(45deg)
+            top: 50%
+
+        .menu-btn.active span:nth-child(3) 
+            transform: translate(-50%, -50%) rotate(-45deg)
+            top: 50%
+
+        .menu.active nav 
+            display: flex
+            width: 100%
+            overflow: overlay
+            flex-direction: column
+
+        .menu-mob li 
+            list-style: none
+            position: relative
+
+        .menu-mob li a 
+            color: #FFF
+            font-family: Gogh
+            font-size: 16px
+            font-style: normal
+            font-weight: 500
+            line-height: normal
+            text-decoration: none
+
+        .menu-mob li a 
+            width: 100%
+            display: block
+        
+        .menu-mob li:nth-child(2), .menu-mob li:nth-child(3), .menu-mob li:nth-child(4)
+            margin-top: 24px 
+
+        .menu-mob li:nth-child(6)
+            margin-top: 26px
+
+        .menu-mob 
+            .mob-contacs 
+                margin-top: 45px
+            .contact a
+                display: flex
+                align-content: center
+                img 
+                    width: 24px
+                    height: 24px
+                    margin-right: 12px
+                p
+                    color: #FFF
+                    font-family: Gogh
+                    font-size: 16px
+                    font-style: normal
+                    font-weight: 500
+                    line-height: normal
+            .phone
+                width: 208px
+                margin-top: 24px
+                a
+                    display: flex
+            .mob-lan
+                display: flex
+                margin-top: 24px
+                a
+                    width: 24px
+                    height: 24px
+                    display: flex
+                    align-items: center
+                    &:nth-child(2)
+                        margin-left: 18px
+
+            .mob-network
+                display: flex
+                margin-top: 48px

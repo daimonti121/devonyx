@@ -1,10 +1,12 @@
 @import 'media'
 @import 'fonts'
 @import 'servise-anim'
-@import 'carousel'
 @import 'modal-btn'
 @import 'checkbox'
 @import 'modal-project'
+@import 'projectSlider'
+@import 'serviceSlider'
+@import 'menu-mob'
 
 *, *::before, *::after
     margin: 0
@@ -37,9 +39,10 @@ html, .body
 [class*="__container"]
     max-width: 1110px
     margin: 0 auto
-    @include _1440
+    @include _1170 
         margin: 0 40px
-
+    @include _979
+        margin: 0 20px
 @mixin modalButton
     background: #F13B81
     border-radius: 10px
@@ -55,7 +58,7 @@ html, .body
         background: #d03973
 
 body::-webkit-scrollbar
-    width: 7px
+    width: 10px
 
 body::-webkit-scrollbar-track
     background: rgba(39, 23, 47, 1)
@@ -63,7 +66,7 @@ body::-webkit-scrollbar-track
 body::-webkit-scrollbar-thumb
     background-color: #772568 /* цвет бегунка */
     border-radius: 15px /* округлось бегунка */
-    border: 2px solid #000 /* отступ вокруг бегунка */
+    border: 3px solid #000 /* отступ вокруг бегунка */
 
 p
     font-family: 'Gogh'
@@ -77,6 +80,10 @@ p
     width: 100%
     @include _1440
         background: url('../img/header-back.png') 0%/cover no-repeat
+    @include _979
+        background: url('../img/header-back-mob.png') 0%/cover no-repeat
+        height: 714px
+
 
     &__links
         background: rgba(39, 23, 47, 1)
@@ -85,8 +92,12 @@ p
         justify-content: space-between
         align-items: center
         padding: 8px 0px
+        @include _979
+            padding: 20px 0px
     &__links-platform
         display: flex
+        @include _979
+            display: none
     &__link
         margin-right: 18px
         a
@@ -94,8 +105,12 @@ p
     &__links-backInfo
         display: flex
         align-items: center
+        @include _979
+            display: none
     &__link-backInfo
         margin-left: 24px
+        @include _979
+            display: none
         a
             display: flex
             align-items: center
@@ -114,6 +129,8 @@ p
 
     &__menu
         margin-top: 36px
+        @include _979
+            display: none
         .menu__inner
             display: flex
             justify-content: space-between
@@ -166,12 +183,18 @@ p
             color: rgba(241, 59, 129, 1)
     &__lan
         margin-left: 10px
+        .active 
+            border: 2px solid rgba(255, 255, 255, 1)
+            border-radius: 20px
     &__info
         .info__inner
             max-width: 360px
             width: 100%
             margin-top: 148px
             padding-bottom: 150px
+            @include _979
+                max-width: 100%
+                margin-top: 40px
             h2
                 color: #FFF
                 font-family: Gogh
@@ -179,6 +202,11 @@ p
                 font-style: normal
                 font-weight: 700
                 line-height: normal
+                @include _979
+                    max-width: 270px
+                    margin: auto
+                    text-align: center
+                    font-size: 24px
             p
                 color: #FFF
                 font-family: Gogh
@@ -187,6 +215,13 @@ p
                 font-weight: 500
                 line-height: 130%
                 margin-top: 8px
+                @include _979
+                    text-align: center
+                    font-size: 16px
+                    margin: auto
+                    margin-top: 10px
+                    max-width: 278px
+                    width: 100%
             button
                 margin-top: 20px
                 color: #FFF
@@ -198,6 +233,10 @@ p
                 line-height: normal
                 padding: 15px 10px
                 @include modalButton
+                @include _979
+                    display: block
+                    margin: 0 auto
+                    margin-top: 18px
     // finish section: header  
 
 .main
@@ -206,6 +245,9 @@ p
     // start section: service 
     .service
         margin-top: 52px
+        @include _979
+            margin-top: 30px
+            margin-bottom: 34px
         h2
             color: #772568
             text-align: center
@@ -213,29 +255,44 @@ p
             font-size: 32px
             font-weight: 700
             line-height: normal
+            @include _979
+                font-size: 24px
         &__blocks
             display: flex
             justify-content: center
             align-items: center
             flex-wrap: wrap
             margin-top: 52px
+            @include _979
+                display: none
 
-        button
+        .button
             @include modalButton
             padding: 15px
             margin: 80px auto 0px
             display: block
+            @include _979
+                margin-top: -20px
     // finish section: service 
 
     // start section: project 
     .project
         margin-top: 64px
+        padding-bottom: 32px
         background: url('../img/project-back.png') 100% 0%/cover no-repeat
+        @include _979
+            margin-top: 32px
+            padding-bottom: 37px
+            background: url('../img/project-back-mob.png') 100% 0%/cover no-repeat
         &__info
             display: flex
             justify-content: center
             padding-top: 30px
             width: 100%
+            @include _979
+                flex-direction: column
+                text-align: center
+                padding-top: 66px
             h2
                 color: #FFF
                 text-align: center
@@ -246,6 +303,10 @@ p
                 line-height: normal
                 display: block
                 width: 40%
+                @include _979   
+                    font-size: 24px
+                    width: 100%
+                
             p
                 color: #FFF
                 font-family: Gogh
@@ -256,41 +317,104 @@ p
                 display: block
                 max-width: 440px
                 width: 100%
+                @include _979   
+                    font-size: 16px
+                    line-height: 110%
+                    margin: auto
+                    max-width: 282px
 
-        button
+        .button
             @include modalButton
             padding: 15px
-            margin: 0px auto 36px
+            margin: 0px auto 0px
             position: relative
-            left: calc( 50% - 85px )
+            left: calc( 50% - 74px )
+            @include _979 
+
     // finish section: project 
 
     // start section: company 
     .company
         margin-top: 78px
         margin-bottom: 84px
+        @include _979
+            margin-top: 30px
+            margin-bottom: 38px
         &__inner
             display: flex
             flex-direction: column
         &__items
             display: flex
             align-items: flex-start
+            @include _979
+                flex-direction: column
             .photos
                 display: flex
                 flex-wrap: wrap
+                @include _979
+                    justify-content: center
+                &__title-mob
+                    display: none
+                    @include _979
+                        display: block
+                        text-align: center
+                    h4
+                        color: #F13B81
+                        font-family: Gogh
+                        font-size: 16px
+                        font-style: normal
+                        font-weight: 800
+                        line-height: normal
+                    h2
+                        color: #616161
+                        text-align: center
+                        font-family: Gogh
+                        font-size: 24px
+                        font-style: normal
+                        font-weight: 700
+                        line-height: normal
+                        margin-top: 11px
                 &__top
                     display: flex
+                    @include _979
+                        margin-top: 10px
                     button
                         margin: 4px
                         cursor: pointer
                     .image-1
                         width: 200px
                         height: 200px
+                        @include _979
+                            width: 37%
+                            height: 116px
+                        img
+                            width: 100%
+                            height: 100%
                     .image-2
                         width: 376px
                         height: 200px
+                        @include _979
+                            width: 60%
+                            height: 116px
+                        img
+                            width: 100%
+                            height: 100%
                 &__bottom
                     display: flex
+                    .image-3
+                        @include _979
+                            width: 60%
+                            height: 137px
+                        img
+                            width: 100%
+                            height: 100%
+                    .image-4
+                        @include _979
+                            width: 37%
+                            height: 137px
+                        img
+                            width: 100%
+                            height: 100%
                     button
                         margin: 4px
                         cursor: pointer
@@ -298,6 +422,9 @@ p
                 max-width: 430px
                 width: 100%
                 margin-left: 45px
+                @include _979
+                    margin-left: 0
+                    text-align: center                
                 &__title
                     h4
                         color: #F13B81
@@ -306,6 +433,9 @@ p
                         font-style: normal
                         font-weight: 900
                         line-height: normal
+                        @include _979
+                            display: none
+                        
                     h2
                         color: #616161
                         font-family: Gogh
@@ -314,6 +444,8 @@ p
                         font-weight: 700
                         line-height: normal
                         margin-top: 8px
+                        @include _979
+                            display: none
                     p
                         color: #616161
                         font-family: Gogh
@@ -322,13 +454,21 @@ p
                         font-weight: 400
                         line-height: normal
                         margin-top: 8px
+                        @include _979
+                            text-align: left
+                            margin-top: 12px
+                            max-width: 320px
                 &__list
                     margin-top: 17px
+                    @include _979
+                        margin-top: 10px
                     .list-item
                         display: flex
                         align-items: center
                         justify-content: flex-start
                         margin-bottom: 17px
+                        @include _979
+                            margin-bottom: 23px
                         p
                             max-width: 284px
                             color: #616161
@@ -338,15 +478,23 @@ p
                             font-weight: 700
                             line-height: normal
                             margin-left: 16px
+                            @include _979
+                                font-size: 20px
+                                text-align: left
                     img
                         width: 55px
                         height: 55px
+                        @include _979
+                            width: 48px
+                            height: 48px
                     .list-item-last
                         display: flex
                         align-items: center
                         justify-content: flex-start
                         .text
                             margin-left: 16px
+                            @include _979
+                                text-align: left
                             h6
                                 color: #F13B81
                                 font-family: Gogh
@@ -363,10 +511,14 @@ p
                                 font-weight: 700
                                 line-height: normal
                                 margin-top: 5px
+                                @include _979
+                                    font-size: 20px
         &__back-info
             max-width: 686px
             margin: 58px auto 0px
             text-align: center
+            @include _979
+                margin: 24px auto 0px
             h2
                 color: #616161
                 font-family: Gogh
@@ -374,6 +526,8 @@ p
                 font-style: normal
                 font-weight: 700
                 line-height: normal
+                @include _979
+                    font-size: 24px
             p
                 color: #616161
                 text-align: center
@@ -383,10 +537,15 @@ p
                 font-weight: 400
                 line-height: normal
                 margin-top: 20px
+                @include _979
+                    margin-top: 11px
+                    max-width: 310px
             button
                 @include modalButton
                 padding: 15px
                 margin-top: 30px
+                @include _979
+                    margin-top: 23px
 
     // finish section: company 
 
@@ -394,16 +553,28 @@ p
 
     .footer
         background: url('../img/footer-back.png') 100% 0%/cover no-repeat
+        @include _979
+            background: url('../img/footer-back-mob.png') 100% 0%/cover no-repeat
+            height: 694px
         &__inner
             padding-top: 30px
             display: flex
             justify-content: space-between
+            @include _979
+                flex-direction: column
+                text-align: center
         &__menu
+            @include _979
+                margin-top: 15px
             nav
                 ul
                     list-style-type: none
                     li
                         margin-bottom: 12px
+                        @include _979
+                            margin-bottom: 11px
+                        &:nth-child(4)
+                            margin-bottom: 0px
                         a
                             text-decoration: none
                             font-family: Gogh
@@ -419,7 +590,13 @@ p
         &__logo
             position: relative
             left: 50px
+            @include _979
+                order: -1
+                left: 0px
+                margin: 14px 0px 0px
         .backInfo
+            @include _979
+                margin-top: 36px
             &__title
                 h2
                     font-family: Gogh
@@ -429,13 +606,20 @@ p
                     letter-spacing: 0em
                     text-align: left
                     color: #fff
+                    @include _979
+                        text-align: center
             &__list
                 .item
                     margin-top: 16px
+                    @include _979
+                        margin-top: 16px
                     a
                         display: flex
                         align-items: center
                         text-decoration: none
+                        @include _979
+                            text-align: center
+                            justify-content: center
                         span
                             color: #FFF
                             font-family: Gogh
@@ -445,10 +629,15 @@ p
                             line-height: normal
                             transition: .4s
                             margin-left: 7px
+                            @include _979
+                                text-align: center
                     a:hover span
                         color: rgba(241, 59, 129, 1)
             &__links
-                margin-top: 20px
+                margin-top: 18px
+                @include _979
+                    margin-top: 34px
+                    margin-bottom: 48px
                 a
                     margin: 0px 7px
 

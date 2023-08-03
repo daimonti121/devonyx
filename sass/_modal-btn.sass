@@ -6,16 +6,16 @@
 .modal
     display: none
     position: fixed
-    z-index: 1
+    z-index: 2
     padding-top: 100px
     left: 0
     top: 0
     width: 100%
     height: 100%
     overflow: auto
-    background-color: rgb(0,0,0)
-    background-color: rgba(0,0,0,0.4)
-
+    backdrop-filter: blur(5px)
+    @include _979
+        padding-top: 0
 /* Modal Content/Box */
 
 .modal-content
@@ -23,7 +23,6 @@
     position: relative
     background-color: #EBF0F5
     margin: auto
-    border: 1px solid #888
     max-width: 1280px
     width: 80%
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
@@ -31,6 +30,12 @@
     -webkit-animation-duration: 0.4s
     animation-name: animatetop
     animation-duration: 0.4s
+    border-radius: 20px
+    @include _979
+        width: 100%
+        border-radius: 0px
+        padding: 36px 20px 20px 20px
+
     h2 
         color: #616161
         font-family: Gogh
@@ -38,6 +43,8 @@
         font-style: normal
         font-weight: 700
         line-height: normal
+        @include _979
+            font-size: 24px
     p 
         color: #616161
         font-family: Gogh
@@ -47,6 +54,9 @@
         line-height: normal
         max-width: 514px
         margin-top: 8px
+        @include _979
+            max-width: 272px
+            width: 100%
     a
         color: #F13B81
         font-family: Gogh
@@ -58,6 +68,8 @@
         margin-top: 10px
         display: block
         width: 160px
+        @include _979
+            margin-top: 3px
     form 
         display: flex
         flex-direction: column
@@ -92,6 +104,9 @@
             font-weight: 400
             line-height: normal  
             resize: none
+        @include _979
+                max-width: 260px
+                min-height: 180px
         .submit
             max-width: 175px
             background: #F13B81
@@ -108,13 +123,36 @@
             margin-top: 30px
             &:hover
                 background: #d03973
+            @include _979
+                margin-bottom: 36px
+        .checkbox-label
+            display: flex
+            align-content: center
+            p   
+                margin-top: 0px
 
+        .styled-checkbox + label:before
+            position: relative
+            top: 1px
+            @include _979
+                position: relative
+                top: 12px
+
+        .styled-checkbox:checked + label:after
+            @include _979
+                top: 20px
 /* The Close Button */
 .close
     color: #aaa
     float: right
-    font-size: 28px
+    font-size: 60px
     font-weight: bold
+    line-height: 0.5
+    transition: .5s
+    @include _979
+        color: rgba(46, 46, 46, 1)
+        font-size: 43px
+        line-height: 0.7
 
 .close:hover,
 .close:focus
