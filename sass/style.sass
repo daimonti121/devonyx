@@ -76,13 +76,14 @@ p
 
 // start section: header  
 .header
-    background: url('../img/header-back-big.jpg') 100% 70%/cover no-repeat
+    background: url('../img/header-back-big.jpg') 50%/cover no-repeat
     width: 100%
     @include _1440
-        background: url('../img/header-back.jpg') 0%/cover no-repeat
+        background: url('../img/header-back.jpg') 50%/cover no-repeat
     @include _979
         background: url('../img/header-back-mob.png') 0%/cover no-repeat
         height: 714px
+        overflow: hidden
 
 
     &__links
@@ -101,7 +102,14 @@ p
     &__link
         margin-right: 18px
         a
-            display: flex
+            display: flex      
+            .icon
+                width: 18px
+                height: 18px
+                fill: #fff
+                transition: .4s 
+                &:hover
+                    fill: #F13B81
     &__links-backInfo
         display: flex
         align-items: center
@@ -126,6 +134,14 @@ p
                 transition: 0.5s
             &:hover p
                 color: rgba(241, 59, 129, 1)
+            &:hover .icon 
+                fill: #F13B81
+            .icon
+                width: 18px
+                height: 18px
+                fill: #fff
+                transition: .4s 
+                margin-right: 12px
 
     &__menu
         margin-top: 36px
@@ -160,6 +176,12 @@ p
     &__backinfo
         display: flex
         align-items: center
+        .icon-phone
+            width: 24px
+            height: 24px
+            fill: #fff
+            transition: .4s 
+            margin-right: 12px
     &__phone
         display: flex
         align-items: center
@@ -188,6 +210,18 @@ p
         img
             border-radius: 20px
     &__info
+        .flex
+            display: flex
+            justify-content: space-between
+            align-items: flex-end
+            @include _979
+                flex-direction: column
+                align-items: center
+        .background-img
+            position: relative
+            left: 60px
+            @include _979
+                left: 0px
         .info__inner
             max-width: 360px
             width: 100%
@@ -196,6 +230,7 @@ p
             @include _979
                 max-width: 100%
                 margin-top: 40px
+                padding-bottom: 40px
             h2
                 color: #FFF
                 font-family: Gogh
@@ -272,7 +307,7 @@ p
             padding: 15px
             margin: 80px auto 0px
             display: block
-            @include _768
+            @include _979
                 margin-top: -20px
     // finish section: service 
 
@@ -355,6 +390,9 @@ p
                 flex-wrap: wrap
                 @include _979
                     justify-content: center
+                    flex-direction: column
+                    align-items: center
+                    margin: 0 auto
                 &__title-mob
                     display: none
                     @include _979
@@ -429,7 +467,7 @@ p
                 width: 100%
                 margin-left: 45px
                 @include _979
-                    margin-left: 0
+                    margin: 0 auto
                     text-align: center                
                 &__title
                     h4
@@ -494,31 +532,33 @@ p
                             width: 48px
                             height: 48px
                     .list-item-last
-                        display: flex
-                        align-items: center
-                        justify-content: flex-start
-                        .text
-                            margin-left: 16px
-                            @include _979
-                                text-align: left
-                            h6
-                                color: #F13B81
-                                font-family: Gogh
-                                font-size: 16px
-                                font-style: normal
-                                font-weight: 800
-                                line-height: normal
-                            p
-                                max-width: 284px
-                                color: #616161
-                                font-family: Gogh
-                                font-size: 24px
-                                font-style: normal
-                                font-weight: 700
-                                line-height: normal
-                                margin-top: 5px
+                        a
+                            display: flex
+                            align-items: center
+                            justify-content: flex-start
+                            text-decoration: none
+                            .text
+                                margin-left: 16px
                                 @include _979
-                                    font-size: 20px
+                                    text-align: left
+                                h6
+                                    color: #F13B81
+                                    font-family: Gogh
+                                    font-size: 16px
+                                    font-style: normal
+                                    font-weight: 800
+                                    line-height: normal
+                                p
+                                    max-width: 284px
+                                    color: #616161
+                                    font-family: Gogh
+                                    font-size: 24px
+                                    font-style: normal
+                                    font-weight: 700
+                                    line-height: normal
+                                    margin-top: 5px
+                                    @include _979
+                                        font-size: 20px
         &__back-info
             max-width: 686px
             margin: 58px auto 0px
@@ -637,14 +677,32 @@ p
                             margin-left: 7px
                             @include _979
                                 text-align: center
+                        .icon 
+                            width: 24px
+                            height: 24px
+                            fill: #fff
+                            margin-right: 11px
+                            transition: .4s
                     a:hover span
                         color: rgba(241, 59, 129, 1)
+                    a:hover .icon 
+                        fill: #F13B81
             &__links
                 margin-top: 18px
                 @include _979
                     margin-top: 34px
                     margin-bottom: 48px
                 a
-                    margin: 0px 7px
+                    margin: 0px 18px 0px 0px
+                    @include _979
+                        margin: 0px 12px 0px 0px
+                    .icon 
+                        width: 18px
+                        height: 18px
+                        fill: #fff
+                        transition: .4s
+                a:hover .icon 
+                        fill: #F13B81
 
     // finish section: footer 
+

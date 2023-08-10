@@ -112,10 +112,11 @@
             .contact a
                 display: flex
                 align-content: center
-                img 
+                .icon 
                     width: 24px
                     height: 24px
                     margin-right: 12px
+                    fill: #fff
                 p
                     color: #FFF
                     font-family: Gogh
@@ -128,9 +129,15 @@
                 margin-top: 24px
                 a
                     display: flex
+                .icon 
+                    width: 22px
+                    height: 22px
+                    margin-right: 8px
+
             .mob-lan
                 display: flex
                 margin-top: 24px
+                margin-left: 0
                 a
                     width: 24px
                     height: 24px
@@ -140,6 +147,8 @@
                         margin-left: 18px
                     img
                         border-radius: 20px
+                    img.active 
+                        border: 2px solid white
 
             .mob-network
                 display: flex
