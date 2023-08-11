@@ -442,7 +442,7 @@
     font-weight: bold;
     line-height: 0.5;
     transition: 0.5s;
-    font-family: "Times New Roman", Times, serif !important;
+    font-family: "Times New Roman" !important;
     cursor: pointer; }
     @media (max-width: 979px) {
       .modal-header .btn-close {
