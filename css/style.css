@@ -1451,7 +1451,8 @@ p {
           .main .company__back-info button {
             margin-top: 23px; } }
   .main .footer {
-    background: url("../img/footer-back.png") 100% 0%/cover no-repeat; }
+    background: url("../img/footer-back.png") 100% 0%/cover no-repeat;
+    overflow: hidden; }
     @media (max-width: 979px) {
       .main .footer {
         background: url("../img/footer-back-mob.png") 100% 0%/cover no-repeat;
@@ -1590,5 +1591,3 @@ p {
 
 img.mfp-img {
   cursor: auto; }
-
-/*# sourceMappingURL=style.css.map */
